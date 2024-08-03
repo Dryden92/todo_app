@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ 'Edit Task' if task else 'New Task' }}</h2>
+<form method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ task.name if task else '' }}" required>
+    <label for="description">Description:</label>
+    <textarea name="description">{{ task.description if task else '' }}</textarea>
+    <label for="deadline">Deadline:</label>
+    <input type="date" name="deadline" value="{{ task.deadline.strftime('%Y-%m-%d') if task else '' }}" required>
+    <button type="submit">{{ 'Update' if task else 'Create' }}</button>
+</form>
+{% endblock %}

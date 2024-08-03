@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Tasks</h2>
+<a href="{{ url_for('task_form') }}">Add New Task</a>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <strong>{{ task.name }}</strong><br>
+        {{ task.description }}<br>
+        Deadline: {{ task.deadline.strftime('%Y-%m-%d') }}<br>
+        <a href="{{ url_for('edit_task', task_id=task.id) }}">Edit</a> |
+        <a href="{{ url_for('delete_task', task_id=task.id) }}" onclick="return confirm('Are you sure?');">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
