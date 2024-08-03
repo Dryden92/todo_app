@@ -1,0 +1,14 @@
+step 1-
+  i. open command prompt
+  ii. navigate to the project folder directory
+step 2-
+  Check and Install Compatible Versions:
+  pip install Flask==2.0.3
+  pip install SQLAlchemy==1.4.36
+  pip install Flask-SQLAlchemy==2.5.1
+  pip install Werkzeug==2.0.3
+
+step 3-
+  i. open command prompt
+  ii. navigate to the project folder directory
+  iii. type- "python app.py" to run the flask application
